@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Tank Fill Calculator</title>
+<style>body{font:18px system-ui;max-width:950px;margin:40px auto;padding:0 20px;color:#163047}label{display:block;margin:16px 0}input,select,button{font:inherit;padding:8px}strong{font-size:30px}.error{color:#a32020}table{border-collapse:collapse}td,th{padding:10px;border-bottom:1px solid #ddd;text-align:left}</style>
+<a href="/">Sensor dashboard</a><h1>Tank Fill Calculator</h1>
+<p>Rectangular tank. Length and width in feet. Select the depth unit explicitly. Result in US gallons.</p>
+<form method="post">
+<label>Length (ft) <input name="length_ft" value="10" required></label>
+<label>Width (ft) <input name="width_ft" value="6" required></label>
+<label>Depth <input name="depth" value="-1" required></label>
+<label>Depth unit <select name="depth_unit"><option value="in" selected>inches (in)</option><option value="ft" >feet (ft)</option></select></label>
+<button type="submit">Calculate volume</button></form>
+<h2 class="error">Calculation refused</h2><p class="error" role="alert">Depth must be zero or greater.</p>
+
+<h2>Original workbook verification</h2><table><tr><th>Case</th><th>Input</th><th>Expected result</th></tr>
+<tr><td>R-101, Tank Fill!G6</td><td>10 ft × 6 ft × 8 in</td><td>299.2208 US gal</td></tr>
+<tr><td>R-108, Field Notes!E11</td><td>10 ft × 6 ft × 2.5 ft</td><td>1122.0780 US gal</td></tr></table>
+<p>R-108 was entered as 2.5 inches in the legacy calculation despite a field note of 2.5 feet. Verify the source before choosing a unit. Temperature readings do not measure tank depth and are not used in this calculation.</p>
+<p>Assumes a level rectangular tank with vertical walls. Tank height, overflow capacity, and calibration are not independently verified.</p></html>

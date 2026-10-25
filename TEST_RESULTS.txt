@@ -1,0 +1,8 @@
+Final capstone, October 25, 2026
+Assistant Linux environment, Python 3.12
+python3 -m pytest -q
+21 passed in 1.31s
+python3 verify_workbook.py
+18 original workbook rows match their cached entered-inch results.
+python3 capture_evidence.py --no-browser
+PASS: HTTP states, alert/clear, stale/missing, FAILED, child crash/restart, SQLite integrity, recovered HEALTHY.
